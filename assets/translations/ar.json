@@ -1,0 +1,17 @@
+{
+  "movies": "أفلام",
+  "movie": "فيلم",
+  "description": "وصف",
+  "settings": "إعدادات",
+  "location_not_defined": "الموقع غير محدد",
+  "something_went_wrong": "هناك خطأ ما",
+  "search": "بحث",
+  "filter": "تنقية",
+  "genres": "الأنواع",
+  "year": "سنة",
+  "enter_year": "أدخل السنة",
+  "apply": "أكمل",
+  "clear": "مسح",
+  "close": "غلق",
+  "no_movies": "لا توجد أفلام"
+}
