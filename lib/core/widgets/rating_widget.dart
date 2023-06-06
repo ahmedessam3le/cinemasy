@@ -4,7 +4,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../style/app_colors.dart';
 
 class RatingWidget extends StatelessWidget {
-  final double votes;
+  final num votes;
   const RatingWidget({
     Key? key,
     required this.votes,

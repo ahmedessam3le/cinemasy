@@ -52,7 +52,7 @@ class AppUtils {
         (lastName ?? '');
   }
 
-  String getLangCode() {
+  static String getLangCode() {
     try {
       switch (window.locale.languageCode) {
         case AppValues.langCodeAr:

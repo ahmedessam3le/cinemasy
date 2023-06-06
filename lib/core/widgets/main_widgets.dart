@@ -2,6 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../filter/presentation/views/filter_view.dart';
+import '../../home/domain/entities/filter_model.dart';
 import '../const/app_strings.dart';
 import '../style/app_colors.dart';
 
@@ -18,6 +20,59 @@ Widget buildDivider() {
     height: 1,
     indent: 0,
   );
+}
+
+Future<FilterModel?> showFilterBottomSheet({
+  required BuildContext context,
+  required FilterModel? filter,
+}) async {
+  final FilterModel? res = await showModalBottomSheet<FilterModel?>(
+    context: context,
+    isScrollControlled: true,
+    clipBehavior: Clip.hardEdge,
+    backgroundColor: Theme.of(context).dialogBackgroundColor,
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(22),
+        topRight: Radius.circular(22),
+      ),
+    ),
+    builder: (BuildContext context) {
+      return FractionallySizedBox(
+        heightFactor: 0.9,
+        child: FilterView(
+          filter: filter,
+        ),
+      );
+    },
+  );
+  return res;
+}
+
+Future<FilterModel?> showFilterAlertDialog({
+  required BuildContext context,
+  required FilterModel? filter,
+}) async {
+  final FilterModel? res = await showDialog<FilterModel?>(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        clipBehavior: Clip.hardEdge,
+        contentPadding: EdgeInsets.zero,
+        backgroundColor: Theme.of(context).dialogBackgroundColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(22),
+        ),
+        content: SizedBox(
+          width: 1000,
+          child: FilterView(
+            filter: filter,
+          ),
+        ),
+      );
+    },
+  );
+  return res;
 }
 
 class AppErrorWidget extends StatelessWidget {

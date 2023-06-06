@@ -1,6 +1,6 @@
 class ProductionCompany {
   final int id;
-  final String logoPath, name, originCountry;
+  final String? logoPath, name, originCountry;
 
   ProductionCompany({
     required this.id,
